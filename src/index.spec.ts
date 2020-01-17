@@ -24,12 +24,19 @@ type State = {
   } & DataFetching;
 };
 
+type TestCase = {
+  scenario: string;
+  state: State;
+  loadingKeys: Array<keyof State>;
+  expectedResult: boolean;
+};
+
 describe(`useLoading hook`, () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
 
-  [
+  const testCases: TestCase[] = [
     {
       scenario: 'returns true when some requested state keys are loading',
       state: {
@@ -72,17 +79,9 @@ describe(`useLoading hook`, () => {
       loadingKeys: [],
       expectedResult: false,
     },
-    {
-      scenario: 'returns false when invalid state key is requested',
-      state: {
-        a: { isFetching: true },
-        b: { isFetching: true },
-        c: { isFetching: true },
-      },
-      loadingKeys: ['invalidKey'],
-      expectedResult: false,
-    },
-  ].forEach(({ scenario, state, loadingKeys, expectedResult }) => {
+  ];
+
+  testCases.forEach(({ scenario, state, loadingKeys, expectedResult }) => {
     it(scenario, () => {
       mockUseSelector.mockImplementation(callback => callback(state));
 
