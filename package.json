@@ -1,0 +1,55 @@
+{
+  "name": "react-use-is-loading",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "description": "React hook to determine if any specified part of application state is loading",
+  "keywords": [
+    "hooks",
+    "react",
+    "fetch",
+    "redux"
+  ],
+  "homepage": "https://github.com/grug/react-use-is-loading",
+  "repository": "git@github.com:grug/react-use-is-loading.git",
+  "author": "Dave Cooper <dave@davecooper.org>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "build": "rimraf dist/ && tsc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "np": {
+    "contents": "dist"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-redux": "^7.1.3"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.7",
+    "@types/react": "^16.9.17",
+    "@types/react-redux": "^7.1.6",
+    "@types/react-test-renderer": "^16.9.1",
+    "husky": "^4.0.10",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "react": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-test-renderer": "^16.12.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.5"
+  }
+}
